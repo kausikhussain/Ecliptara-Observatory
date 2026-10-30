@@ -2,12 +2,14 @@
   "name": "ecliptara-observatory",
   "version": "1.0.0",
   "private": true,
+  "license": "UNLICENSED",
   "type": "module",
   "description": "An evidence-first space observatory for near-Earth encounters and orbital assets.",
   "scripts": {
     "test": "node --test tests/*.test.js",
     "validate": "node scripts/validate_project.js",
     "check": "node --check js/app.js && node --check js/scene.js && node --check js/neo-client.js && node --check js/impact-model.js && node --test tests/*.test.js && node scripts/validate_project.js",
-    "serve": "python -m http.server 4173"
+    "serve": "node scripts/serve.js",
+    "serve:py": "python -m http.server 4173"
   }
 }

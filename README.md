@@ -1,147 +1,147 @@
 <div align="center">
 
-# 🌐 ECLIPTARA
-### Space Intelligence Observatory & Near-Earth Encounter Telemetry
+# ECLIPTARA
+### *Space Intelligence Observatory*
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg?style=for-the-badge)](#-proprietary-notice--reservation-of-rights)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES2024%20Modules-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Three.js](https://img.shields.io/badge/Three.js-r164-000000?style=for-the-badge&logo=three.dot.js&logoColor=white)](https://threejs.org/)
 [![NASA Open APIs](https://img.shields.io/badge/Data-NASA%20NeoWs%20%7C%20APOD-0B3D91?style=for-the-badge&logo=nasa&logoColor=white)](https://api.nasa.gov/)
 [![CelesTrak](https://img.shields.io/badge/Orbit-CelesTrak%20SGP4-0052CC?style=for-the-badge)](https://celestrak.org/)
 [![Tests](https://img.shields.io/badge/Tests-8%2F8%20Passing-success?style=for-the-badge&logo=node.js&logoColor=white)](tests/)
-[![Zero Build](https://img.shields.io/badge/Build-Zero%20Config%20Required-brightgreen?style=for-the-badge)](package.json)
+[![Zero External Bundler](https://img.shields.io/badge/Build-Zero%20Bundler%20Required-brightgreen?style=for-the-badge)](package.json)
 
 <p align="center">
-  <b>An evidence-first astronomical telemetry workspace and 3D celestial observatory for near-Earth object (NEO) close encounters, orbital asset tracking, and kinetic impact energy modeling.</b>
+  <b>An evidence-first astronomical workspace and 3D celestial observatory for near-Earth object encounters, orbital asset tracking, and kinetic energy modeling.</b>
 </p>
 
-[Explore Capabilities](#-core-capabilities) •
-[Architecture](#-system-architecture) •
-[Scientific Guardrails](#-scientific-methodology--guardrails) •
-[Quickstart](#-quick-start) •
-[API Configuration](#-api-configuration) •
-[Documentation](#-keyboard-shortcuts)
+[Overview](#-1-project-overview) •
+[Vision](#-2-product-purpose--vision) •
+[Features](#-3-main-features) •
+[Tech Stack](#-4-technology-stack) •
+[Architecture](#-5-architecture-overview) •
+[Interface](#-6-interface-preview) •
+[Installation & Run](#-7-installation--running-locally) •
+[Validation](#-10-testing--validation) •
+[Legal Notice](#-15-proprietary-notice--reservation-of-rights)
 
 ---
 
 </div>
 
-## 🌌 Overview
+## 🌌 1. Project Overview
 
-**Ecliptara** is an independent, high-fidelity web observatory engineered for exploring near-Earth object (NEO) encounters and active orbital assets. It combines a cinematic WebGL 3D Earth field with source-verified close-approach data from NASA's Jet Propulsion Laboratory (JPL) NeoWs, side-by-side multi-parameter encounter comparisons, an educational kinetic energy laboratory, live SGP4 satellite propagation, and a daily spaceflight briefing.
+**Ecliptara** is an independent, owner-maintained web observatory engineered for exploring near-Earth object (NEO) encounters and active orbital assets. The application combines a cinematic 3D Earth scene rendered via Three.js with source-verified close-approach data from NASA's Near Earth Object Web Service (NeoWs), multi-object comparative telemetry, live SGP4 satellite orbit propagation, an educational kinetic energy laboratory, and a daily spaceflight briefing.
 
-```
-       .               +   .                .   . .     .  .
-   .                    .       .               .         .   .
-           .      _______________________     .          .
-     .           /                       \          .
-         .      /     E C L I P T A R A   \    .           .
-               |     [ 3D CELESTIAL FIELD ] |        .       +
-    +          \      EARTH - NEO - ASSETS /    .
-          .     \_______________________/            .
-     .           .            |             .            .
-                      DATA BEFORE DRAMA
-```
+The project is built on vanilla ECMAScript modules and modern CSS, requiring **zero bundlers or build steps**. It runs directly in contemporary browsers when served over standard HTTP.
 
 > [!IMPORTANT]
-> **Independent Scientific Instrument:** Ecliptara is an independent educational and research exploration tool. It is not affiliated with, operated by, or endorsed by NASA, the Jet Propulsion Laboratory (JPL), or any government agency.
+> **Independent Project Notice:** Ecliptara is an independent, privately maintained project developed for educational and scientific exploration. It is not affiliated with, operated by, sponsored by, or endorsed by NASA, the Jet Propulsion Laboratory (JPL), CelesTrak, or any government agency.
 
 ---
 
-## 🧭 Core Philosophy: Data Before Drama
+## 🔭 2. Product Purpose & Vision
 
-Modern media frequently mischaracterizes near-Earth asteroids using fear-inducing headlines and unsupported "apocalypse scores." Ecliptara rejects sensationalism through strict adherence to scientific provenance:
+Modern reporting around asteroids frequently leans on sensationalist headlines, creating anxiety around routine astronomical close passes. Ecliptara is built on the founding principle of **Data Before Drama**:
 
-1. **Observed vs. Inferred:** Source-reported radar and optical measurements (e.g. miss distance, relative velocity, absolute magnitude $H$) are kept distinct from derived quantities (estimated diameter ranges).
-2. **Transparent Confidence & Provenance:** Every displayed record explicitly flags its state: `LIVE` (verified upstream response), `CACHED` (offline/fallback local storage), `LOADING`, or `UNAVAILABLE`.
-3. **No Fabricated Risk Indices:** Ecliptara intentionally avoids aggregating multi-dimensional orbital parameters into an arbitrary single "Earth danger score."
-4. **Schematic Integrity:** The 3D encounter field transparently presents normalized schematic trajectories for visual context rather than claiming millimetre-precision vector ephemerides.
+- **Strict Physical Delineation:** Source-reported radar and optical measurements (nominal miss distance, relative velocity, absolute magnitude $H$) are kept visually distinct from estimated quantities (derived diameter ranges) and hypothetical scenarios.
+- **Transparent Provenance:** Telemetry indicators explicitly flag whether data is `LIVE` (fresh upstream response), `CACHED` (offline browser fallback), `LOADING`, or `UNAVAILABLE`.
+- **No Fabricated Risk Indices:** Ecliptara intentionally avoids inventing aggregate "danger scores" or artificial collision threat ratings.
+- **Explicit Visualization Boundaries:** The 3D encounter field presents normalized schematic trajectories to provide spatial context without masquerading as millimetre-precision vector ephemerides.
 
 ---
 
-## ✨ Core Capabilities
+## ✨ 3. Main Features
 
-### 🌍 1. Photorealistic 3D Earth & Celestial Field
-- Powered by **Three.js (r164)** with hardware-accelerated WebGL rendering.
-- High-resolution Earth base mapping from **NASA Blue Marble: Next Generation**.
-- Multi-layered atmospheric Rayleigh scattering rim shader, specular ocean reflections, and procedural rotational cloud deck.
-- Dynamic deep-space starfield with authentic celestial axial tilt and orbital plane orientation.
-- Intuitive orbit navigation with smooth damping, custom zoom steps, and instant camera frame reset.
-- Schematic close-approach trajectory guides with interactive asteroid hitboxes and contextual focus telemetry.
+### 🌍 Photorealistic 3D Earth & Celestial Field
+- Hardware-accelerated WebGL sphere using **Three.js (r164)**.
+- High-resolution Earth surface map referencing **NASA Blue Marble: Next Generation**.
+- Multi-layered atmospheric Rayleigh scattering rim shader, specular ocean highlights, and procedural cloud layer rotation.
+- Starfield backdrop with axial tilt orientation.
+- Interactive camera controls: orbit rotation, smooth zoom steps, and instant camera orientation reset (<kbd>R</kbd>).
+- Interactive close-approach object markers with hover and selection indicators.
 
-### ☄️ 2. Real-Time NASA NeoWs Near-Earth Intelligence
-- Live programmatic interface to **NASA's Near Earth Object Web Service (NeoWs)**.
-- Query any historical or future UTC observation date with single-click navigation.
-- Deep encounter inspect files:
-  - **Designation & SPK-ID** with direct link to NASA JPL Small-Body Database (SBDB).
-  - **Nominal & Minimum Miss Distance** reported simultaneously in Astronomical Units (AU), Kilometres (km), and Lunar Distances (LD).
-  - **Relative Velocity** in $\text{km/s}$ and $\text{km/h}$.
-  - **Estimated Diameter Bounds** (minimum to maximum spans calculated from optical absolute magnitude $H$ and albedo models).
-  - **Potentially Hazardous Asteroid (PHA)** classification derived strictly from official astronomical criteria.
-- Real-time catalog filtering: filter by PHA status, search by designation/name, or sort by closest approach, peak velocity, largest diameter, or approach time.
+### ☄️ Real-Time NASA NeoWs Telemetry
+- Direct programmatic integration with NASA's Near Earth Object Web Service.
+- Date navigation across historical and upcoming UTC observation windows.
+- Comprehensive object inspection files:
+  - Designation, SPK-ID, and direct link to the NASA JPL Small-Body Database (SBDB).
+  - Nominal miss distance displayed in Astronomical Units (AU), Kilometres (km), and Lunar Distances (LD).
+  - Relative encounter velocity in $\text{km/s}$ and $\text{km/h}$.
+  - Estimated diameter intervals (minimum and maximum bounds in metres).
+  - Potentially Hazardous Asteroid (PHA) classification derived strictly from official IAU/NASA threshold criteria.
+- Real-time filtering by PHA status, search by designation/name, and sorting by distance, velocity, diameter, or encounter timestamp.
 
-### 📊 3. Multi-Asteroid Comparative Telemetry
-- Compare up to three near-Earth objects side-by-side in a dedicated analysis workspace.
-- Multi-parameter normalized telemetry bars:
-  - Lunar Distance comparisons ($1 \text{ LD} \approx 384,400 \text{ km}$).
-  - Hyperbolic encounter velocity deltas.
-  - Volumetric and diameter spread ranges.
-- Zero synthetic scoring: evaluations are based purely on physical observations.
+### 📊 Multi-Encounter Comparative Analysis
+- Side-by-side comparative workspace supporting up to three near-Earth objects concurrently.
+- Normalized comparative bars across lunar distance, relative velocity, and estimated size.
+- Pure observational comparison without arbitrary synthetic weighting.
 
-### 🛰️ 4. CelesTrak Orbital Asset & Constellation Tracker
-- Direct integration with **CelesTrak's space stations catalog**.
-- Real-time **SGP4 orbital propagation** using `satellite.js`.
-- Derives instant sub-satellite geodetic coordinates (Latitude, Longitude, Altitude) and velocity.
-- Plots real-time ground tracks and current vehicle positions on an equirectangular orbital map.
-- Displays orbital parameters: TLE epoch age, orbital inclination, period, and altitude above sea level.
+### 🛰️ CelesTrak Orbital Asset Tracker
+- Direct retrieval of Two-Line Element (TLE) sets from **CelesTrak's space stations group**.
+- Real-time **SGP4 orbit propagation** via `satellite.js`.
+- Derives instant geodetic latitude, longitude, altitude, and ground speed.
+- Interactive equirectangular projection map plotting real-time sub-satellite points and track markers.
+- Explicit display of TLE epoch age, orbital inclination, and period.
 
-### 💥 5. Kinetic Energy & Impact Physics Laboratory
+### 💥 Kinetic Energy Impact Laboratory
 - An interactive, physics-grounded laboratory for exploring hypothetical kinetic impact dynamics.
-- Implements classical kinetic energy physics:
-  $$\text{Volume: } V = \frac{4}{3}\pi \left(\frac{d}{2}\right)^3 = \frac{\pi d^3}{6}$$
-  $$\text{Mass: } m = \rho \cdot V$$
-  $$\text{Kinetic Energy: } E_k = \frac{1}{2} m v^2$$
-- Custom user-configurable parameters:
-  - Asteroid diameter: $1\text{ m}$ to $500\text{ m}$.
-  - Atmospheric entry velocity: $11\text{ km/s}$ (Earth escape velocity baseline) to $72\text{ km/s}$ (retrograde solar system maximum).
-  - Bulk density models: Porous carbonaceous body ($1,500\text{ kg/m}^3$), Rocky silicate body ($3,000\text{ kg/m}^3$), Iron-nickel body ($7,800\text{ kg/m}^3$).
-- Formats energy output into Joules ($\text{J}$), Megatons of TNT ($1\text{ Mt} \approx 4.184 \times 10^{15}\text{ J}$), and standard 15-kiloton equivalent scales.
-- Enforces strict educational disclaimers regarding atmospheric ablation, burst altitude, and seismic coupling.
+- Implements classical mechanics equations:
+  - Spherical volume: $V = \frac{\pi}{6} d^3$
+  - Estimated mass: $m = \rho \cdot V$
+  - Kinetic energy: $E_k = \frac{1}{2} m v^2$
+- User-adjustable parameters: diameter ($1\text{ m}$ to $500\text{ m}$), velocity ($11\text{ km/s}$ to $72\text{ km/s}$), and bulk density models ($1,500\text{ kg/m}^3$, $3,000\text{ kg/m}^3$, $7,800\text{ kg/m}^3$).
+- Formats energy output into Joules ($\text{J}$), Megatons of TNT ($1\text{ Mt} \approx 4.184 \times 10^{15}\text{ J}$), and 15-kiloton equivalent scales.
+- Strictly accompanied by educational disclaimers regarding atmospheric entry, burst altitude, and target geology.
 
-### 🔭 6. Spaceflight Operations & APOD Briefing
-- **NASA Astronomy Picture of the Day (APOD)**: Daily high-resolution imagery and professional astronomical breakdown.
-- **Launch Library 2 (The Space Devs)**: Live manifests of upcoming orbital rocket launches, launch providers, mission profiles, and synchronized countdown timers.
-- **System Integrity Feed**: Live status indicator monitoring API health, network availability, and cache synchronization.
+### 🔭 Spaceflight Operations & APOD Briefing
+- **NASA Astronomy Picture of the Day (APOD)**: Daily high-resolution astronomical imagery with verified scientific explanations.
+- **Launch Library 2 (The Space Devs)**: Live manifest of upcoming orbital rocket launches with live countdown timers and mission profiles.
+- **System Integrity Monitor**: Live status indicator auditing API availability, network status, and cached states.
 
-### ⚡ 7. Command Palette & Ergonomics
+### ⚡ Command Palette & Ergonomics
 - Universal command launcher via <kbd>Ctrl</kbd>+<kbd>K</kbd> / <kbd>Cmd</kbd>+<kbd>K</kbd>.
-- Instant search across all loaded asteroids, navigation between observatory views, and camera orientation reset.
-- Native keyboard accessibility: <kbd>/</kbd> to search, <kbd>←</kbd>/<kbd>→</kbd> for UTC day shifts, <kbd>R</kbd> for camera reset, <kbd>Esc</kbd> to clear selections or dismiss modals.
-- Glassmorphism dark-mode interface with respect for `prefers-reduced-motion`.
+- Full keyboard navigation: <kbd>/</kbd> to search, <kbd>←</kbd>/<kbd>→</kbd> for UTC day shifts, <kbd>R</kbd> for camera reset, <kbd>Esc</kbd> to dismiss dialogs.
+- Clean glassmorphism dark-mode interface with respect for `prefers-reduced-motion`.
 
 ---
 
-## 🏗️ System Architecture
+## 🛠️ 4. Technology Stack
+
+| Layer | Technologies & Dependencies | Purpose |
+|:---|:---|:---|
+| **Core Architecture** | HTML5 (Semantic), Vanilla ECMAScript 2024 (ES Modules) | Zero-build frontend structure |
+| **Styling & UI** | CSS3 (Custom properties, CSS Grid, Flexbox, Glassmorphism) | Celestial dark-theme presentation |
+| **3D Celestial Graphics** | [Three.js](https://threejs.org/) (r164 via jsDelivr CDN), OrbitControls | WebGL 3D globe and celestial scene |
+| **Orbital Mechanics** | [satellite.js](https://github.com/shashwatak/satellite-js) (6.0.1 via jsDelivr CDN) | SGP4/SDP4 satellite orbit propagation |
+| **Astronomical Feeds** | NASA NeoWs API, NASA APOD Basic API, CelesTrak API, Launch Library 2 API | Real-time space observation feeds |
+| **Typography** | Space Grotesk, Manrope, DM Mono (Google Fonts CDN) | Scientific data typography |
+| **Local Tooling** | Node.js (Built-in `http`, `fs`, `test`), Python (optional fallback) | Local static serving & test validation |
+
+---
+
+## 🏛️ 5. Architecture Overview
 
 ```mermaid
 flowchart TD
     subgraph UI ["Client Presentation Layer (Zero-Build ES Modules)"]
-        HTML["index.html\nSemantic Shell & HUD"]
-        CSS["styles.css\nGlassmorphic Celestial Theme"]
-        APP["app.js\nState & Event Controller"]
-        SCENE["scene.js\nThree.js WebGL 3D Globe"]
-        NEO["neo-client.js\nNASA Telemetry Adapter"]
-        IMPACT["impact-model.js\nKinetic Physics Engine"]
+        HTML["index.html\nSemantic Shell & HUD Overlays"]
+        CSS["css/styles.css\nCelestial Glassmorphic Theme"]
+        APP["js/app.js\nApplication Controller & Router"]
+        SCENE["js/scene.js\nThree.js WebGL Celestial Engine"]
+        NEO["js/neo-client.js\nNASA Telemetry Adapter"]
+        IMPACT["js/impact-model.js\nKinetic Physics Engine"]
     end
 
-    subgraph APIS ["Upstream Up-to-Date Astronomical Feeds"]
-        NASA_NEO["NASA NeoWs API\n(Asteroids Close-Approach)"]
+    subgraph APIS ["Upstream External Services"]
+        NASA_NEO["NASA NeoWs API\n(Close-Approach Feeds)"]
         NASA_APOD["NASA APOD Basic\n(Astronomy Picture of the Day)"]
-        CELESTRAK["CelesTrak API\n(Orbital Station TLEs)"]
-        LL2["Launch Library 2\n(Orbital Launch Manifests)"]
+        CELESTRAK["CelesTrak API\n(Space Station TLEs)"]
+        LL2["Launch Library 2\n(Upcoming Rocket Launches)"]
+        TEXTURE["NASA Blue Marble\n(Remote Earth Base Map)"]
     end
 
-    subgraph STORAGE ["Local Persistence & Resilience"]
+    subgraph STORAGE ["Local Browser Storage"]
         CACHE["Browser localStorage\n(API Keys & Cached Responses)"]
     end
 
@@ -153,188 +153,189 @@ flowchart TD
     APP --> NASA_APOD
     APP --> CELESTRAK
     APP --> LL2
+    SCENE --> TEXTURE
     SCENE --> HTML
     APP --> HTML
 ```
 
 ---
 
-## 🔬 Scientific Methodology & Guardrails
+## 🖼️ 6. Interface Preview
 
-### 1. Potentially Hazardous Asteroid (PHA) Definition
-In international astronomical convention (NASA JPL / IAU Minor Planet Center), an asteroid is classified as a **Potentially Hazardous Asteroid** if and only if:
-1. Its **Minimum Orbit Intersection Distance (MOID)** with Earth is $\le 0.05\text{ AU}$ (approx. $7,480,000\text{ km}$ or $19.5\text{ LD}$).
-2. Its **Absolute Magnitude ($H$)** is $\le 22.0$, corresponding approximately to a diameter larger than $140\text{ metres}$ assuming an albedo of $0.14$.
+```text
++---------------------------------------------------------------------------------------+
+|  ✳ ECLIPTARA  |  CONNECTING TO OBSERVATION FEED  |  2026-10-30 UTC  |   [ ⌘ K ]  [EC] |
++-----------------------------------+-----------------------------------+---------------+
+| 01 / ENCOUNTER INDEX              | THE CELESTIAL FIELD               | OBJECT FILE   |
+| Near-Earth encounters.            | Earth, in context. [3D]           | (2024 YR4)    |
+|                                   |                                   |               |
+| [ ← ] [ 2026-10-30 ] [ → ]        |           .   *               .   | Miss Distance |
+| [ Search designation... ]  [/]    |        .     .-----.              | 0.0028 AU     |
+| [Sort: Closest approach v] [x] PHA|             /       \     *       | 1.09 LD       |
+|                                   |            |  EARTH  |            |               |
+| > 2024 YR4        0.0028 AU (1.09)|             \       /             | Velocity      |
+|   2020 CD3        0.0142 AU (5.52)|              '-----'              | 14.2 km/s     |
+|   99942 Apophis   0.0980 AU (38.1)|         \        .      /         |               |
+|   2021 QM1        0.1205 AU (46.9)|          '--[x]--------'          | Est. Diameter |
+|                                   |          NEO Trajectory           | 45 m - 100 m  |
++-----------------------------------+-----------------------------------+---------------+
+| TIMELINE: [ | | | | | | | | | | | | | | | | | ] 2026-10-30 UTC       | SOURCE: LIVE  |
++---------------------------------------------------------------------------------------+
+```
 
-A classification of PHA does **not** mean an impact will occur; it simply categorizes the object as an astronomical body whose orbit warrants long-term tracking.
-
-### 2. Lunar Distance (LD) Scale
-Measurements in deep space are difficult to grasp in raw kilometres. Ecliptara uses Lunar Distance as a primary comparative unit:
-$$1\text{ LD} = 384,400\text{ km} \approx 0.00257\text{ AU}$$
-An object passing at $5\text{ LD}$ is nearly 2 million kilometres away—well outside any physical threat to Earth or low-Earth orbit satellites.
-
-### 3. Kinetic Energy Equation
-The impact laboratory computes kinetic energy using classical non-relativistic mechanics:
-$$E_k = \frac{1}{2} m v^2$$
-For a spherical body of diameter $d$ and bulk density $\rho$:
-$$m = \frac{\pi}{6} \rho d^3$$
-$$E_k = \frac{\pi}{12} \rho d^3 v^2$$
-The energy is converted to TNT equivalent using the standard convention:
-$$1\text{ Megaton TNT (Mt)} = 4.184 \times 10^{15}\text{ Joules}$$
-
----
-
-## ⌨️ Keyboard Shortcuts
-
-| Shortcut | Context | Action |
-|:---:|:---:|:---|
-| <kbd>Ctrl</kbd> + <kbd>K</kbd> / <kbd>⌘</kbd> + <kbd>K</kbd> | Global | Open the Ecliptara Command Palette |
-| <kbd>/</kbd> | Global | Focus the encounter search input |
-| <kbd>←</kbd> | Global | Step observation window back 1 UTC day |
-| <kbd>→</kbd> | Global | Step observation window forward 1 UTC day |
-| <kbd>R</kbd> | 3D Scene | Reset camera orientation and zoom |
-| <kbd>Esc</kbd> | Modals / Workspace | Dismiss open dialogs or clear selected object file |
+*(Note: Live graphical screenshots can be placed in `assets/screenshots/` for release showcases.)*
 
 ---
 
-## 🚀 Quick Start
+## 🚀 7. Installation & Running Locally
 
-Ecliptara is built with vanilla ECMAScript modules and requires **zero build steps, bundlers, or package installations**. It runs directly in modern browsers when served over HTTP.
+Ecliptara has **no compile step and no required npm package installations**. It runs using any standard HTTP server.
 
-> [!WARNING]
-> Do not open `index.html` using a `file://` protocol. Modern ES module imports and fetch policies require an HTTP server environment.
+> [!CAUTION]
+> Do not open `index.html` via `file://`. Browser security standards (CORS and ES Module import specifications) require HTTP/HTTPS serving.
 
-### Option 1: Native Startup Scripts
+### Prerequisites
+- Any modern web browser (Chrome, Edge, Firefox, Safari) with WebGL support.
+- **Node.js** (v18+ recommended) **OR** **Python** (3.8+).
 
-**Windows:**
-Double-click `start-windows.bat` or run:
+---
+
+## 🪟 8. Windows-Specific Setup Instructions
+
+### Option A: One-Click Startup (Recommended)
+Double-click [`start-windows.bat`](file:///c:/Users/kausi/Downloads/Ecliptara-Observatory/start-windows.bat) or run from PowerShell / Command Prompt:
 ```powershell
 .\start-windows.bat
 ```
+*The batch file automatically detects Node.js and starts the server via `node scripts/serve.js`. If Node.js is not present, it seamlessly falls back to Python.*
 
-**macOS / Linux:**
-Run the shell script:
+### Option B: Node.js Command Line
+```powershell
+# Using npm script:
+npm run serve
+
+# Or directly with Node:
+node scripts/serve.js
+```
+
+### Option C: Python Command Line
+```powershell
+py -m http.server 4173
+# Or:
+python -m http.server 4173
+```
+
+---
+
+## 🐧 9. macOS / Linux Setup Instructions
+
+### Option A: One-Click Shell Script
 ```bash
 chmod +x start-macos-linux.sh
 ./start-macos-linux.sh
 ```
 
-### Option 2: Python Built-in Server
-
+### Option B: Node.js / npm
 ```bash
-# Windows
-py -m http.server 4173
+npm run serve
+```
 
-# macOS / Linux
+### Option C: Python 3
+```bash
 python3 -m http.server 4173
 ```
 
-### Option 3: Node.js / npx
-
-```bash
-npx serve -l 4173 .
-```
-
-Once running, navigate your browser to:
-👉 **[http://localhost:4173](http://localhost:4173)**
+Once running, open your web browser to:
+👉 **`http://localhost:4173`**
 
 ---
 
-## 🔑 API Configuration
+## 🧪 10. Testing & Validation
 
-Ecliptara is pre-configured with NASA's default `DEMO_KEY`, enabling immediate exploration. However, NASA's shared demo key is subject to strict hourly rate limits (30 requests per IP per hour, 50 per day).
+The repository includes a comprehensive zero-dependency verification pipeline covering JavaScript syntax, physics calculations, astronomical telemetry conversions, and DOM element mappings:
 
-To use your personal free key:
-1. Obtain an API key instantly from [api.nasa.gov](https://api.nasa.gov/).
-2. Click the **EC** preferences avatar or open the Command Palette (<kbd>Ctrl</kbd>+<kbd>K</kbd>) and select **Preferences / Settings**.
-3. Paste your personal API key into the NASA API key field and click **Save preferences**.
-4. Your key is stored securely in your browser's private `localStorage` and never transmitted to third-party servers.
-
----
-
-## 📁 Repository Structure
-
-```text
-Ecliptara-Observatory/
-├── assets/
-│   └── mark.svg                   # Brand mark and vector observatory insignia
-├── css/
-│   └── styles.css                 # Glassmorphism UI, celestial layout, and responsive styles
-├── js/
-│   ├── app.js                     # Application lifecycle, views, commands, and telemetry
-│   ├── impact-model.js            # Kinetic impact laboratory physics calculations
-│   ├── neo-client.js              # NASA NeoWs API client, caching, and formatting
-│   └── scene.js                   # Three.js WebGL Earth and encounter visualization
-├── scripts/
-│   ├── validate_project.js        # Node.js project integrity and DOM reference validator
-│   └── validate_project.py        # Python project integrity and HTML parser validator
-├── tests/
-│   ├── impact-model.test.js       # Unit tests for kinetic impact calculations
-│   └── neo-client.test.js         # Unit tests for NeoWs telemetry, conversions, and units
-├── .gitignore                     # Git ignore rules for node, cache, and system files
-├── CHANGELOG.md                   # Chronological version history and release notes
-├── CREDITS.md                     # Upstream dataset credits and asset licenses
-├── index.html                     # Semantic observatory markup and layout structure
-├── LICENSE                        # MIT Open Source License
-├── package.json                   # Project metadata, test runner, and check scripts
-├── README.md                      # Comprehensive observatory documentation and field guide
-├── start-macos-linux.sh           # One-click startup script for UNIX systems
-└── start-windows.bat              # One-click startup script for Windows systems
-```
-
----
-
-## 🧪 Testing & Validation
-
-Ecliptara includes an automated test and verification suite ensuring code correctness, physical calculation accuracy, and DOM integrity:
-
-```bash
-# Run unit tests
+```powershell
+# 1. Run physical model and telemetry unit tests:
 npm test
 
-# Run DOM and asset validation
+# 2. Run DOM and asset reference validation:
 npm run validate
 
-# Run complete check (syntax + unit tests + project validation)
+# 3. Run complete verification suite (Syntax + Tests + DOM Validation):
 npm run check
 ```
 
-### Verification Pipeline:
-- **`node --check`**: Verifies valid ECMAScript syntax across all core modules.
-- **`node --test tests/*.test.js`**: Validates kinetic energy formulas, volume scaling, boundary conditions, astronomical distance conversions, and deterministic UTC date formatting.
-- **`scripts/validate_project.js`**: Validates that all HTML IDs referenced in JavaScript exist, identifies duplicates, and verifies local asset links.
+### Verification Pipeline Breakdown:
+- **`node --check`**: Verifies valid syntax across `js/app.js`, `js/scene.js`, `js/neo-client.js`, and `js/impact-model.js`.
+- **`node --test tests/*.test.js`**: Executes the Node.js test runner against:
+  - Kinetic energy quadratic scaling ($E \propto v^2$).
+  - Spherical volume and mass scaling ($m \propto d^3$).
+  - Boundary input rejection (negative/zero diameter, velocity outside $11\text{--}72\text{ km/s}$).
+  - Unit formatting for Joules, Megatons of TNT, and Hiroshima equivalents.
+  - Astronomical distance conversions (AU to km, AU to LD).
+  - Deterministic UTC date string formatting.
+- **`scripts/validate_project.js`**: Verifies that every DOM element ID queried by `js/app.js` exists in `index.html`, identifies duplicates, and verifies all local file references.
 
 ---
 
-## 🗺️ Roadmap
+## 🔑 11. API Integrations & Data Sources
 
-- [x] Three.js photorealistic Earth with Rayleigh atmospheric scattering.
-- [x] NASA NeoWs live close-approach telemetry integration.
-- [x] Multi-object comparative telemetry workspace.
-- [x] CelesTrak SGP4 satellite propagation & sub-satellite map.
-- [x] Kinetic impact laboratory with density and velocity models.
-- [x] NASA APOD & Launch Library 2 spaceflight briefings.
-- [x] Command Palette (<kbd>Ctrl</kbd>+<kbd>K</kbd>) & keyboard ergonomics.
-- [ ] Integration with JPL Sentry Risk Table for automated impact risk monitoring.
-- [ ] SPICE kernel ephemeris integration for sub-kilometre trajectory plotting.
-- [ ] Custom WebGL shader for real-time solar terminator and day/night shadow cycles.
-- [ ] Expanded satellite tracking to Starlink and OneWeb low-Earth constellations.
+| API / Resource | Provider | Endpoint / Usage | Default Key / Tier |
+|:---|:---|:---|:---|
+| **NeoWs Feed** | NASA / JPL | `https://api.nasa.gov/neo/rest/v1/feed` | Pre-configured with `DEMO_KEY` |
+| **APOD Basic** | NASA Science | `https://science.nasa.gov/wp-json/wp/v2/apod-basic/` | Pre-configured with `DEMO_KEY` |
+| **Stations TLE** | CelesTrak | `https://celestrak.org/NORAD/elements/gp.php` | Public open endpoint |
+| **Launch Manifest** | The Space Devs | `https://ll.thespacedevs.com/2.2.0/launch/upcoming/` | Public tier (rate-limited) |
+| **Earth Surface Map** | NASA Earth Obs. | `https://assets.science.nasa.gov/...` | Remote diffuse texture map |
 
 ---
 
-## 📄 License & Attribution
+## ⚙️ 12. Environment Configuration
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for full details.
+Ecliptara operates with NASA's default `DEMO_KEY` out of the box. Because `DEMO_KEY` is shared globally and subject to rate limits (30 requests/hour, 50 requests/day per IP):
 
-### Third-Party Data & Asset Credits
-- **NASA Near Earth Object Web Service (NeoWs)**: Data courtesy of NASA / JPL Small-Body Database ([api.nasa.gov](https://api.nasa.gov/)).
-- **NASA Blue Marble Imagery**: Earth base texture courtesy of NASA Science Earth Observatory ([Blue Marble Collection](https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-map/)).
-- **NASA APOD**: Astronomy Picture of the Day service operated by NASA Science.
-- **CelesTrak**: Satellite orbital two-line element sets (TLEs) courtesy of Dr. T.S. Kelso / [CelesTrak](https://celestrak.org/).
-- **Launch Library 2**: Spaceflight schedules provided by [The Space Devs](https://thespacedevs.com/llapi).
-- **Three.js**: 3D graphics library created by [Ricardo Cabello (mrdoob)](https://threejs.org/).
+1. Request a personal API key from [api.nasa.gov](https://api.nasa.gov/).
+2. In Ecliptara, click the **EC** settings button or press <kbd>Ctrl</kbd>+<kbd>K</kbd> and select **Preferences / Settings**.
+3. Paste your personal key into the input field and click **Save preferences**.
+4. The key is stored locally in your browser's private `localStorage` (`ecliptara:api-key`) and used exclusively for your requests.
 
-See [`CREDITS.md`](CREDITS.md) for detailed upstream licensing and usage conditions.
+*For server-side deployments or container environments, reference [`.env.example`](file:///.env.example) for template variable declarations.*
+
+---
+
+## ⚠️ 13. Known Limitations
+
+1. **Schematic Encounter Paths:** NeoWs daily feeds provide close-approach scalars (miss distance, epoch time, relative velocity), not full vector ephemerides or state vectors. The 3D encounter paths rendered in Ecliptara are normalized schematic visualization aids, not numerical ephemeris integrators.
+2. **Orbital Asset Scope:** The satellite view loads CelesTrak's `stations` group (active space stations). It does not include the complete 25,000+ object NORAD catalog or operational debris tracking.
+3. **Hypothetical Impact Model:** The impact laboratory models an idealized spherical body impacting at constant velocity. It does not model atmospheric ablation, airburst altitudes, fragmentation mechanics, seismic coupling, or geographic damage footprints.
+4. **Third-Party Availability:** Live telemetry depends on the operational availability and network response times of upstream providers (NASA, CelesTrak, The Space Devs).
+
+---
+
+## ⌨️ 14. Keyboard Shortcuts
+
+| Shortcut | Context | Action |
+|:---:|:---:|:---|
+| <kbd>Ctrl</kbd> + <kbd>K</kbd> / <kbd>⌘</kbd> + <kbd>K</kbd> | Global | Open the Ecliptara Command Palette |
+| <kbd>/</kbd> | Global | Focus the encounter search bar |
+| <kbd>←</kbd> | Global | Step observation window back 1 UTC day |
+| <kbd>→</kbd> | Global | Step observation window forward 1 UTC day |
+| <kbd>R</kbd> | 3D Scene | Reset camera orientation and zoom |
+| <kbd>Esc</kbd> | Modals / Views | Dismiss open dialogs or clear selected object file |
+
+---
+
+## 📜 15. Proprietary Notice & Reservation of Rights
+
+**Copyright © 2026 Ecliptara Project Owner. All rights reserved.**
+
+**No open-source license is granted for this repository. Viewing the publicly accessible repository does not grant permission to copy, modify, distribute, or commercially use the original project code.**
+
+This repository is made publicly visible on GitHub exclusively for evaluation, scientific exploration, and portfolio review. Except where permitted under applicable statutory copyright law (such as fair use or fair dealing):
+- No permission is granted to reproduce, fork for redistribution, sublicense, sell, or create derivative works of original Ecliptara source code, styles, or visual brand assets.
+- Third-party software libraries ([Three.js](https://threejs.org/), [satellite.js](https://github.com/shashwatak/satellite-js)), public datasets ([NASA NeoWs](https://api.nasa.gov/), [CelesTrak](https://celestrak.org/), [Launch Library 2](https://thespacedevs.com/llapi)), remote imagery ([NASA Blue Marble](https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-map/)), and typography remain governed by their respective licenses and terms of use.
+
+For detailed third-party licensing, attributions, and legal notices, consult [`CREDITS.md`](CREDITS.md).
 
 ---
 

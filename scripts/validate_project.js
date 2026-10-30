@@ -78,3 +78,4 @@ console.log(`Missing local assets: ${missingFiles.length > 0 ? missingFiles.join
 if (duplicates.length > 0 || missingIds.length > 0 || missingFiles.length > 0) {
   process.exit(1);
 }
+
